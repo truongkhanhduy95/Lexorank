@@ -1,4 +1,4 @@
-# lexorank
+# Lexorank
 > A simple implementation of LexoRank
 
 LexoRank is a ranking system introduced by Atlassian JIRA.
