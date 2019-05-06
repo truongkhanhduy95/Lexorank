@@ -49,7 +49,8 @@ export class Lexorank {
   }
 
   mid(prev: number, next: number): number {
-    return Math.floor((prev + next) / 2); // TODO: consider to use 8 steps each jump
+    // TODO: consider to use 8 steps each jump
+    return Math.floor((prev + next) / 2); 
   }
 
   getChar(s: string, i: number, defaultChar: number): number {
