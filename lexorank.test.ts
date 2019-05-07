@@ -20,4 +20,34 @@ describe('Rank', () => {
     expect(rank).equal('y');
     expect(ok).equal(true);
   });
+
+  it('Test success new digit', async () => {
+    let [rank, ok] = _rank.insert('aaaa', 'aaab');
+    expect(rank).equal('aaaaU');
+    expect(ok).equal(true);
+  });
+
+  it('Test success mid value', async () => {
+    let [rank, ok] = _rank.insert('aaaa', 'aaac');
+    expect(rank).equal('aaab');
+    expect(ok).equal(true);
+  });
+
+  it('Test success new digit mid value', async () => {
+    let [rank, ok] = _rank.insert('az', 'b');
+    expect(rank).equal('azU');
+    expect(ok).equal(true);
+  });
+
+  it('Test fail same prev next', async () => {
+    let [rank, ok] = _rank.insert('aaaa', 'aaaa');
+    expect(rank).equal('aaaa');
+    expect(ok).equal(false);
+  });
+
+  it('Test fail adjacent', async () => {
+    let [rank, ok] = _rank.insert('a', 'a0');
+    expect(rank).equal('a');
+    expect(ok).equal(false);
+  });
 });
